@@ -7,6 +7,8 @@ permalink: /laravel/routes
 
 # Rotas
 
+[:arrow_backward: Voltar](/laravel)
+
 > Documentação oficial: [Routes](https://laravel.com/docs/routing)
 
 - [Introdução](#introdução)
@@ -16,6 +18,7 @@ permalink: /laravel/routes
 - [Nested Resources](#nested-resources)
 - [Um pouco sobre RESTful](#um-pouco-sobre-restful)
 - [Outras boas práticas para rotas](#outras-boas-práticas-para-rotas)
+  - [Utilizando rotas na aplicação](#utilizando-rotas-na-aplicação)
 
 ## Introdução
 
@@ -189,3 +192,9 @@ Route::prefix('human-resource')->name('human-resource.')->group(function () {
   Route::resource('exams', ExamController::class);
 });
 ```
+
+### Utilizando rotas na aplicação
+
+Não utilize as rotas diretamente na aplicação como `"/users/{$id}/edit"`, utilize seus nome com função global `route('users.edit', $id)` ou as funções que facilitam esse processo como `redirect()->route('users.edit', $id)`.
+
+[Voltar para o top](#rotas)
