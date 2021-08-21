@@ -1,3 +1,10 @@
+---
+layout: default
+title: Rotas
+description: A base de acesso da sua aplicação.
+permalink: /laravel/routes
+---
+
 # Rotas
 
 > Documentação oficial: [Routes](https://laravel.com/docs/routing)

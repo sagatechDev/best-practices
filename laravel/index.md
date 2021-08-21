@@ -20,4 +20,4 @@ Mas no fim, a regra que vale é a acertada e discutida por toda equipe de desenv
 
 **Happy coding!** :smile:
 
-- [Rotas](/laravel/routes.md)
+- [Rotas](./routes)
