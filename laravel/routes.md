@@ -7,7 +7,7 @@ permalink: /laravel/routes
 
 # Rotas
 
-[:arrow_backward: Voltar](../)
+[:arrow_backward: Voltar](../laravel)
 
 > Documentação oficial: [Routes](https://laravel.com/docs/routing)
 
