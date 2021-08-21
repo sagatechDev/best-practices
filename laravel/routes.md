@@ -195,6 +195,17 @@ Route::prefix('human-resource')->name('human-resource.')->group(function () {
 
 ### Utilizando rotas na aplicação
 
-Não utilize as rotas diretamente na aplicação como `"/users/{$id}/edit"`, utilize seus nome com função global `route('users.edit', $id)` ou as funções que facilitam esse processo como `redirect()->route('users.edit', $id)`.
+Não utilize a `URL` das rotas diretamente na aplicação.
+
+Utilize seus nome com função global `route()` ou as funções que facilitam esse processo como `redirect()->route()`.
+
+```php
+// Ruim
+"/users/{$id}/edit"
+
+//Bom
+route('users.edit', $id)
+redirect()->route('users.edit', $id)
+```
 
 [Voltar para o top](#rotas)
