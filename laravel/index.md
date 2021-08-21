@@ -4,7 +4,9 @@ title: Laravel
 description: O Framework PHP para Artesões Web
 ---
 
-# Laravel | O Framework PHP para Artesões
+# Laravel | Framework PHP
+
+[:arrow_backward: Voltar](../)
 
 [Laravel](https://laravel.com/) se descreve como:
 
