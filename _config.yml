@@ -1,2 +1,5 @@
 title: Boas práticas
 theme: jekyll-theme-cayman
+
+plugins:
+  - jemoji
