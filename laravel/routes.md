@@ -108,14 +108,14 @@ Devemos pensar nas rotas como uma forma de "pesquisar" dados pela nossa aplicaç
 
 > **Buscar** no módulo de **configurações gerais**, os **webhooks** da **empresa** de ID **1**
 
-Logo nossa URI seria: `GET /geral-configs/companies/1/webhooks`; ou em Laravel:
+Logo nossa URI seria: `GET /general-configs/companies/1/webhooks`; ou em Laravel:
 
 ```php
-Route::get('geral-configs/companies/{company}/webhooks', [CompanyWebhookController::class, 'index']);
+Route::get('general-configs/companies/{company}/webhooks', [CompanyWebhookController::class, 'index']);
 
 // Ou melhor
 
-Route::prefix('geral-configs')->name('geral-configs.')->group(function () {
+Route::prefix('general-configs')->name('general-configs.')->group(function () {
   Route::resource('companies.webhooks', CompanyWebhookController::class);
 });
 
