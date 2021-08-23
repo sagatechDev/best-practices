@@ -52,7 +52,12 @@ class Foo
 {
     /** @var string */
     public $bar;
+}
 
+// Ruim 
+class Foo
+{
+   // Sem tipagem
     public $variable;
 }
 ```
@@ -371,7 +376,7 @@ Comentários devem ser evitados ao máximo, escrevendo código descritivo. Se vo
  */
 ```
 
-Uma possível estrategia para refatorar e remover os comentários é criar funções com nomes que subtitulam os comentários.
+Uma possível estratégia para refatorar e remover os comentários é criar funções com nomes que subtitulam os comentários.
 
 ```php
 // Bom
