@@ -301,8 +301,6 @@ throw new Exception;
 
 ### Evite `else`
 
-In general, else should be avoided because it makes code less readable. In most cases it can be refactored using early returns. This will also cause the happy path to go last, which is desirable.
-
 No geral, `else` deve ser evitado porque ele torna o código menos legível. Em muitos casos, isso pode ser refatorado utilizando [early return](https://dorianneto.com.br/boas-praticas/torne-se-um-ninja-das-funcoes-com-early-return/). Isso também faz o caminho feliz ficar por último, o que é desejável.
 
 ```php
