@@ -9,23 +9,23 @@ permalink: /laravel/general
 
 [:arrow_backward: Voltar](../laravel)
 
-- [Introdução](#introdução)
-- [Tipagem](#tipagem)
+- [**Introdução**](#introdução)
+- [**Tipagem**](#tipagem)
   - [Docblocks](#docblocks)
   - [Nullable e Union Types](#nullable-e-union-types)
   - [Retorno Void](#retorno-void)
-- [Traits](#traits)
-- [Strings](#strings)
-- [Operador Ternário](#operador-ternário)
+- [**Traits**](#traits)
+- [**Strings**](#strings)
+- [**Operador Ternário**](#operador-ternário)
   - [Variáveis Auxiliares](#variáveis-auxiliares)
   - [Extraindo funções](#extraindo-funções)
-- [If](#if)
+- [**If**](#if)
   - [Chaves](#chaves)
   - [Happy Path](#happy-path)
   - [Evite `else`](#evite-else)
   - [Condições compostas](#condições-compostas)
-- [Comentários](#comentários)
-- [Espaçamento](#espaçamento)
+- [**Comentários**](#comentários)
+- [**Espaçamento**](#espaçamento)
 
 ## Introdução
 
@@ -197,7 +197,7 @@ else {
 }
 ```
 
-> **Nota:** Caso precise quebrar de linha na operador ternário, escreva cada expressão numa linha, antecedida pelo operador como no exemplo acima.
+> **Obs:** Caso precise quebrar de linha na operador ternário, escreva cada expressão numa linha, antecedida pelo operador como no exemplo acima.
 
 Para conseguirmos utilizar esses casos de usos mais vezes, devemos fazer mudanças no nosso código para ele seja mais legível, e por consequência, mais fácil de manter.
 
@@ -447,4 +447,4 @@ if ($foo) {
 }
 ```
 
-[Voltar para o top](#geral)
+[Voltar para o topo](#geral)

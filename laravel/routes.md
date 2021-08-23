@@ -11,13 +11,13 @@ permalink: /laravel/routes
 
 > Documentação oficial: [Routes](https://laravel.com/docs/routing)
 
-- [Introdução](#introdução)
-- [Resources](#resources)
+- [**Introdução**](#introdução)
+- [**Resources**](#resources)
   - [Only e Except](#only-except)
-- [Rotas de Ação](#rotas-de-ação)
-- [Nested Resources](#nested-resources)
-- [Um pouco sobre RESTful](#um-pouco-sobre-restful)
-- [Outras boas práticas para rotas](#outras-boas-práticas-para-rotas)
+- [**Rotas de Ação**](#rotas-de-ação)
+- [**Nested Resources**](#nested-resources)
+- [**Um pouco sobre RESTful**](#um-pouco-sobre-restful)
+- [**Outras boas práticas para rotas**](#outras-boas-práticas-para-rotas)
   - [Utilizando rotas na aplicação](#utilizando-rotas-na-aplicação)
 
 ## Introdução
@@ -74,7 +74,7 @@ Em alguns casos as rotas _resources_ não serão o suficiente para nossa aplica�
 
 As rotas de ação são utilizadas quando queremos que uma ação seja executada em um recurso que não seja o CRUD.
 
-> Obs: Em alguns casos o que se acha que não é um CRUD acaba ainda sendo porém de outro recurso que não diretamente o da Model. Veja o que o Adam Wathan [diz aqui](https://www.youtube.com/watch?v=MF0jFKvS4SI). Cuidado para não utilizar as rotas de ação em excesso e não pensar em [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming).
+> **Obs:** Em alguns casos o que se acha que não é um CRUD acaba ainda sendo porém de outro recurso que não diretamente o da Model. Veja o que o Adam Wathan [diz aqui](https://www.youtube.com/watch?v=MF0jFKvS4SI). Cuidado para não utilizar as rotas de ação em excesso e não pensar em [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming).
 
 Esse tipo de rota deve sempre apontar para um [Single Action Controller](https://laravel.com/docs/controllers#single-action-controllers) e não para um método extra dentro de um [Resource Controller](https://laravel.com/docs/controllers#resource-controllers).
 
@@ -208,4 +208,4 @@ route('users.edit', $id)
 redirect()->route('users.edit', $id)
 ```
 
-[Voltar para o top](#rotas)
+[Voltar para o topo](#rotas)
