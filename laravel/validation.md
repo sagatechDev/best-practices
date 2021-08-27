@@ -11,7 +11,11 @@ permalink: /laravel/validation
 
 > Documentação oficial: [Validation](https://laravel.com/docs/validation)
 
-- [Introdução](#introdução)
+- [**Introdução**](#introdução)
+- [**Form Request**](#form-request)
+  - [Acessar dados no Controller](#acessar-dados-no-controller)
+  - [Modificar dados do formulário](#modificar-dados-do-formulário)
+  - [Mesmo formulário, dados diferentes](#mesmo-formulário-dados-diferentes)
 
 ## Introdução
 
@@ -33,11 +37,6 @@ public function store(Request $request)
 }
 
 // Bom
-public function store(PostRequest $request)
-{
-    ....
-}
-
 class PostRequest extends Request
 {
     public function rules()
@@ -48,6 +47,11 @@ class PostRequest extends Request
             'publish_at' => ['nullable', 'date'],
         ];
     }
+}
+
+public function store(PostRequest $request)
+{
+    ....
 }
 ```
 
@@ -62,7 +66,7 @@ Um exemplo seria um formulário que contem dados tanto do usuário quando do seu
 Além disso os dados do formulário vêm em português, mas apenas trabalhamos com variáveis em ingles. Podemos usar o `prepareForValidation` para fazer a mudança.
 
 ```php
-class PostRequest extends Request
+class UserAddressRequest extends Request
 {
 	public function prepareForValidation()
 	{
@@ -105,8 +109,8 @@ Se precisarmos acessar apenas um dado, devemos utilizar `$request->foo`, sendo `
 > **Obs:** Não utilize a variável `$request` fora do controller e nem repasse essa variável para outras classes. Sempre trafegue **dados** (arrays, objetos, collections, etc) entre classes e funções.
 
 ```php
-public function store(PostRequest $request) {
-	Post::create($request->validated());
+public function store(UserAddressRequest $request) {
+	$form = $request->validated();
 
 	//...
 }
@@ -143,6 +147,79 @@ class SomeRequest extends Request
 			'start_date' => Carbon::createFromFormat('Y-m-d\TH:i', $this->start_date),
 		]);
   }
+}
+```
+
+### Mesmo formulário, dados diferentes
+
+Caso precisemos utilizar o mesmo formulário para vários controllers, podemos criar funções publicas dentro do FormRequest que nos retornem apenas os dados necessários para cada situação.
+
+No entanto, deve-se tomar cuidado para não tentar reutilizar o mesmo formulário para casos diferentes, onde as validações sejam diferentes.
+Um exemplo de mal uso seria, por exemplo, criar o mesmo formulário para criar um usuário e para editar o usuário, sendo que as validações não serão as mesmas.
+
+Vamos a um exemplo. Imagine que temos três formulários iguais que seus dados irão para API's externas diferentes. E cada API dessa precisa desses dados com nomes dos campos diferentes. Poderíamos fazer assim:
+
+```php
+/*
+ * API 1 - Lorem ipsum
+ * API 2 - Convallis Sit
+ * API 3 - Dolor Sit
+ */
+class SomeRequest extends Request
+{
+	public function rules()
+	{
+		return [
+			'name' => ['required'],
+			'email' => ['required'],
+			'date' => ['required', 'date'],
+			'http' => ['required'],
+		];
+	}
+
+	public function loremPayload()
+	{
+		return [
+			'user_name' => $this->name,
+			'mail' => $this->email,
+			'date_time' => $this->date,
+			'http_url' => $this->http
+		];
+	}
+
+	public function convallisPayload()
+	{
+		return [
+			'nome' => $this->name,
+			'seuEmail' => $this->email,
+			'data' => $this->date,
+			'url' => $this->http
+		];
+	}
+
+	public function dolorPayload()
+	{
+		return [
+			'UFullName' => $this->name,
+			'VEmail' => $this->email,
+			'DTime' => $this->date,
+			'Url' => $this->http
+		];
+	}
+}
+```
+
+E então dentro de cada controller, podemos algo como isso:
+
+```php
+class LoremController extends Controller
+{
+	public function store(SomeRequest $request)
+	{
+		$form = $request->loremPayload();
+
+		// ...
+	}
 }
 ```
 
