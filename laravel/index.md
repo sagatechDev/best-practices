@@ -27,3 +27,4 @@ Mas no fim, a regra que vale é a acertada e discutida por toda equipe de desenv
 - [Controllers](./controllers)
 - [Validação](./validation)
 - [Services](./services)
+- [Models](./models)
