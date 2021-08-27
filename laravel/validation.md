@@ -27,31 +27,31 @@ Não use validações em controllers.
 // Ruim
 public function store(Request $request)
 {
-    $request->validate([
-        'title' => 'required|unique:posts|max:255',
-        'body' => 'required',
-        'publish_at' => 'nullable|date',
-    ]);
+	$request->validate([
+		'title' => 'required|unique:posts|max:255',
+		'body' => 'required',
+		'publish_at' => 'nullable|date',
+	]);
 
-    ....
+	// ...
 }
 
 // Bom
 class PostRequest extends Request
 {
-    public function rules()
-    {
-        return [
-            'title' => ['required', 'unique:posts', 'max:255']
-            'body' => ['required'],
-            'publish_at' => ['nullable', 'date'],
-        ];
-    }
+	public function rules()
+	{
+		return [
+			'title' => ['required', 'unique:posts', 'max:255']
+			'body' => ['required'],
+			'publish_at' => ['nullable', 'date'],
+		];
+	}
 }
 
 public function store(PostRequest $request)
 {
-    ....
+	// ...
 }
 ```
 
@@ -71,14 +71,16 @@ class UserAddressRequest extends Request
 	public function prepareForValidation()
 	{
 		$this->merge([
-			'user' => [
+				'user' => [
 				'name' => $this->nome,
 				'email' => $this->email,
+
 				// ...
 			],
-			'address' => [
+				'address' => [
 				'street' => $this->rua,
 				'number' => $this->numero,
+
 				// ...
 			]
 		]);
@@ -137,16 +139,16 @@ class SomeRequest extends Request
 	public function rules()
 	{
 		return [
-			'start_date' => ['required', 'date', 'date_format:Y-m-d\TH:i'],
+			'start_date' => ['required', 'date',  'date_format:Y-m-d\TH:i'],
 		];
 	}
 
 	protected function passedValidation()
 	{
 		$this->replace([
-			'start_date' => Carbon::createFromFormat('Y-m-d\TH:i', $this->start_date),
+			'start_date' => Carbon::createFromFormat('Y-m-d\TH:i',  $this->start_date),
 		]);
-  }
+	}
 }
 ```
 
