@@ -40,7 +40,7 @@ public function handle() {
 
 public function handle()
 {
-  $modelsFiltered = $this->getModelsFiltered();
+  $modelsFiltered = $this->getFilteredModels();
 }
 
 private function getFilteredModels()
@@ -114,7 +114,7 @@ public function users()
 
 ## Escopos
 
-Escopos devem ser usados para criar filtros padrões da Model que contenham um nome que explique o que o filtro faz. Exemplo:
+Escopos devem ser usados para criar filtros padrões na Model que contenham um nome que explique o que o filtro faz. Exemplo:
 
 ```php
 // Ruim quando usado fora da Model
@@ -144,7 +144,7 @@ public static function getReportFormattedModels()
 }
 ```
 
-Já as funções não estáticas dependem de uma instância da model, então a query é feita a partir de uma model já carrega da bando.
+Já as funções não estáticas dependem de uma instância da model, então a query é feita a partir de uma model já carregada do banco.
 
 ```php
 public function getReportFormattedModels()
@@ -162,9 +162,9 @@ Prefira usar o segundo caso quando a query for filtrada por **um único registro
 
 ## Query Builder
 
-Em alguns casos, nossas models podem ficar grandes demais por terem muitos escopos ou quando sabemos de ante mão que essa model irá crescer em tamanho e funcionalidades. Nesses casos podemos utilizar um Query Builder customizada para essa model.
+Em alguns casos, nossas models podem ficar grandes demais por terem muitos escopos ou quando sabemos de ante mão que essa model irá crescer em tamanho e funcionalidades. Nesses casos podemos utilizar um Query Builder customizado para essa model.
 
-Devemos primeiramente criar uma pasta no diretório `app/Eloquent/Builders` e um arquivo `FooBuilder.php`, onde `Foo` é o nome da Model. O conteúdo desse aquivo deve seguir o padrão abaixo:
+Devemos primeiramente criar uma pasta no diretório `app/Eloquent/Builders` e um arquivo `FooBuilder.php`, onde `Foo` é o nome da Model. O conteúdo desse arquivo deve seguir o padrão abaixo:
 
 ```php
 <?php
