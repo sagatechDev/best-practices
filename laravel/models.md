@@ -9,7 +9,14 @@ permalink: /laravel/models
 
 [:arrow_backward: Voltar](../laravel)
 
+> Documentação oficial: [Models](https://laravel.com/docs/eloquent)
+
 - [**Introdução**](#introdução)
+- [**Relacionamentos**](#relacionamentos)
+- [**Escopos**](#escopos)
+- [**Funções gerais**](#funções-gerais)
+- [**Query Builder**](#funções-query-builder)
+- [**Eloquent Collections**](#eloquent-collections)
 
 ## Introdução
 
@@ -249,17 +256,18 @@ Caso essas ações feitas nas collections sejam utilizadas em mais de um local o
 Devemos primeiramente criar uma pasta no diretório `app/Eloquent/Collections` e um arquivo `FooCollection.php`, onde `Foo` é o nome da Model. O conteúdo desse aquivo deve seguir o padrão abaixo:
 
 ```php
-<?php
-
 namespace App\Eloquent\Builders;
 
 use Illuminate\Database\Eloquent\Collection;
 
 class FooCollection extends Collection
 {
-	public function onlyWithCode()
+	public function onlyValuesWithCode()
 	{
-		// ..
+		return $this->mapWithKeys()
+		->filter()
+		->sort()
+		->values();
 	}
 }
 ```
@@ -276,6 +284,15 @@ class Foo extends Model
 	{
 		return new FooCollection($models);
 	}
+}
+```
+
+Por fim, podemos usar dessa maneira:
+
+```php
+public function handle()
+{
+	Model::all()->onlyValuesWithCode();
 }
 ```
 
