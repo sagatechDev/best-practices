@@ -81,6 +81,10 @@ Essas services, ao contrário das action services, devem ser criadas para agrupa
 
 Um exemplo seria um service ligada a uma model. Ele pode ser usado para criar, editar e deletar um determinado model, onde suas regras de negocio sejam diferentes de simplesmente trabalhar com o banco de dados.
 
+Seu nome dever seguir o padrão `FooService`, onde `Foo` seja o nome da model.
+
+Exemplo:
+
 ```php
 class UserService
 {
