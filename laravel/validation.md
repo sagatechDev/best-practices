@@ -64,9 +64,7 @@ Caso sejam diferentes validações, devemos criar duas classes diferentes, `Stor
 
 Por exemplo se precisarmos mudar ou adicionar um campo podemos usar a função `prepareForValidation`. Um bom exemplo disso seria a separação de um grande formulário em vários pequenos "formulários".
 
-Um exemplo seria um formulário que contem dados tanto do usuário quando do seu endereço. O ideal seria separar ambos para que possam ser tratados separadamente.
-
-Além disso os dados do formulário vêm em português, mas apenas trabalhamos com variáveis em ingles. Podemos usar o `prepareForValidation` para fazer a mudança.
+Um exemplo seria um formulário que contem dados tanto do usuário quando do seu endereço. O ideal seria separar ambos para que possam ser tratados separadamente. Além disso os dados do formulário vêm em português, mas apenas trabalhamos com variáveis em ingles. Podemos usar o `prepareForValidation` para fazer a mudança.
 
 ```php
 class UserAddressRequest extends Request
