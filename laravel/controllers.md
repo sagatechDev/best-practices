@@ -49,7 +49,7 @@ class PostCommentController
 }
 ```
 
-Os resources controllers não devem ter nenhum método além dos já criados pelo Laravel automaticamente (index, create, store, show, edit, update, destroy). Caso seja necessário, reavalie a sua forma de pensar nas rotas, poís elas devem ser claras em dizer de qual resource está se tratando. Caso ainda haja duvidas nas rotas releia a [documentação](../laravel/routes).
+Os resources controllers não devem ter nenhum método além dos já criados pelo Laravel automaticamente (index, create, store, show, edit, update, destroy). Caso seja necessário, reavalie a sua forma de pensar nas rotas, pois elas devem ser claras em dizer de qual resource está se tratando. Caso ainda haja duvidas nas rotas releia a [documentação](../laravel/routes).
 
 ### Route Model Bindings
 
