@@ -57,7 +57,7 @@ public function store(PostRequest $request)
 
 ## Form Request
 
-Com os form request podemos fazer várias alterações no nosso formulário.
+Com os `FormRequests` podemos fazer várias alterações no nosso formulário.
 
 Seu nome deve seguir o padrão `FooRequest`, onde `Foo` é o nome da ação que estamos tratando ou o nome da model. Por exemplo, se a validação tanto do `store` quanto do `update` forem a mesma, podemos criar uma classe `FooRequest`.
 Caso sejam diferentes validações, devemos criar duas classes diferentes, `StoreFooRequest` e `UpdateFooRequest`.
