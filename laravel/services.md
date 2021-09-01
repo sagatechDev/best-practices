@@ -21,7 +21,7 @@ O Laravel não fala sobre as Services em sua documentação, deixando em aberto 
 
 No fim a service não passa de uma classe com um método que recebe parâmetros, executa uma ação e devolve valores ou gera side-effects.
 
-As services não devem depender de dados e funções que funcionam só no contexto da requisição web ou do usuário estar ou não autenticado, poís isso impossibilita reutilizá-la em outras situações, como nos comandos do console.
+As services não devem depender de dados e funções que funcionam só no contexto da requisição web ou do usuário estar ou não autenticado, pois isso impossibilita reutilizá-la em outras situações, como nos comandos do console.
 
 As services devem estar localizadas em `app/Services`.
 
