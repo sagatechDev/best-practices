@@ -123,7 +123,7 @@ public string | null $variable;
 
 ### Retorno Void
 
-Se um método retorna nada, deve-se indicar como `void`. Isto torna mais fácil para os usuários de seu código entender o que você quer fazer com ele.
+Se um método retorna nada, deve-se indicar como `void`. Isto torna mais fácil para os desenvolvedores entenderem seu código.
 
 ```php
 // Bom
