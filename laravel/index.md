@@ -28,3 +28,5 @@ Mas no fim, a regra que vale é a acertada e discutida por toda equipe de desenv
 - [Validação](./validation)
 - [Services](./services)
 - [Models](./models)
+- [Testing](./testing)
+- [DTO](./dto)

@@ -146,12 +146,14 @@ class SomeRequest extends Request
 
 	protected function passedValidation()
 	{
-		$this->replace([
+		$this->merge([
 			'start_date' => Carbon::createFromFormat('Y-m-d\TH:i',  $this->start_date),
 		]);
 	}
 }
 ```
+
+> **Obs:** Somente nesse caso da utilização do `passedValidation` devemos utilizar o `$request->all()` dentro do Controller, já que os dados alterados na função não refletem diretamente nos dados salvos dentro do validador do `FormRequest`.
 
 ### Mesmo formulário, dados diferentes
 
