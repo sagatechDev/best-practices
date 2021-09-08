@@ -15,7 +15,7 @@ permalink: /laravel/models
 - [**Relacionamentos**](#relacionamentos)
 - [**Escopos**](#escopos)
 - [**Funções gerais**](#funções-gerais)
-- [**Query Builder**](#funções-query-builder)
+- [**Query Builder**](#query-builder)
 - [**Eloquent Collections**](#eloquent-collections)
 
 ## Introdução
