@@ -204,7 +204,7 @@ else {
 
 > **Obs:** Caso precise quebrar de linha na operador ternário, escreva cada expressão numa linha, antecedida pelo operador como no exemplo acima.
 
-Para conseguirmos utilizar esses casos de usos mais vezes, devemos fazer mudanças no nosso código para ele seja mais legível, e por consequência, mais fácil de manter.
+Para conseguirmos utilizar esses casos de usos mais vezes, devemos fazer mudanças no nosso código para que ele seja mais legível, e por consequência, mais fácil de manter.
 
 ### Variáveis Auxiliares
 
